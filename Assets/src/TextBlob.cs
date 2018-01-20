@@ -4,15 +4,29 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TextBlob {
-	private string typedText = "";// What has been typed while this blob was selected
-	public bool isActive = false;// This determines wether this word is being typed
-	public Text word;// The word in this blob
-
-	// Init
-	void Start() {
-		// Get word from GameObject's store
+/* Representation Invariants */
+// 0 < text.length <= 6
+    private string text;      // the text held in this blob
+	private string typedText; // What has been typed while this blob was selected
+    public bool isActive;  // This determines wether this word is being typed
+    
+    public List<GameObject> renderedCharacters; 
+    // Represents the  graphical representation of each character in the 
+    // text blob 
+    
+	public TextBlob(string text) {
+        this.text = text;
+        this.typedText = "";
+        this.isActive = false;
+        this.word
 	}
-
+    
+    // So
+    public string getNextCharacter() {
+    
+    }
+    
+    
 	// Called once per frame
 	void FixedUpdate() {
 		// Update typed word
