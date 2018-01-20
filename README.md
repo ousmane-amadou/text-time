@@ -1,4 +1,4 @@
-# text-time
+# Text-Time
 2D Speed-Texter Game made in Unity. 
 
 ## Features
