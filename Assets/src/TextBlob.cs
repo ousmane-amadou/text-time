@@ -18,43 +18,41 @@ public class TextBlob {
         this.text = text;
         this.typedText = "";
         this.isActive = false;
-        this.word
 	}
     
-    // So
-    public string getNextCharacter() {
+    //public string getNextCharacter() {
     
-    }
+    //}
     
     
-	// Called once per frame
-	void FixedUpdate() {
-		// Update typed word
-		updateTypedWord(Input.inputString);
+	//// Called once per frame
+	//void FixedUpdate() {
+	//	// Update typed word
+	//	updateTypedWord(Input.inputString);
 
-		// Update UI: Compare the chars at each index, if equal green, else red.
-		for (int i = 0; i < typedText.Length; i++) {
-			if (this.word.text.ToCharArray()[i].Equals(this.typedText.ToCharArray()[i])) {
-				// Make green
-				this.word.color = new Color(0, 1f, 0);
+	//	// Update UI: Compare the chars at each index, if equal green, else red.
+	//	for (int i = 0; i < typedText.Length; i++) {
+	//		if (this.word.text.ToCharArray()[i].Equals(this.typedText.ToCharArray()[i])) {
+	//			// Make green
+	//			this.word.color = new Color(0, 1f, 0);
 
-			} else {
-				// Make red
-				this.word.color = new Color(1f, 0, 0);
-			}
-		}
-	}
+	//		} else {
+	//			// Make red
+	//			this.word.color = new Color(1f, 0, 0);
+	//		}
+	//	}
+	//}
 
 
-	// Client calls this to update word progress.
-	void updateTypedWord(string typedString) {
-		this.typedText += typedString;
+	//// Client calls this to update word progress.
+	//void updateTypedWord(string typedString) {
+	//	this.typedText += typedString;
 
-		if (typedString.Contains(" ")) {// User entered space
-			// notify the game object of stats
-			// such as timeLeft, typedText,
-			// word and the fact that we died.
-			return;
-		}
-	}
+	//	if (typedString.Contains(" ")) {// User entered space
+	//		// notify the game object of stats
+	//		// such as timeLeft, typedText,
+	//		// word and the fact that we died.
+	//		return;
+	//	}
+	//}
 }
