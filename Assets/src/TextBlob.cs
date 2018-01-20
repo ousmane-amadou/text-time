@@ -4,15 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TextBlob {
-	//private string word = "";// The word in this blob
 	private string typedText = "";// What has been typed while this blob was selected
 	public bool isActive = false;// This determines wether this word is being typed
-	public Text word = "";// The word in this blob
+	public Text word;// The word in this blob
 
 	// Init
 	void Start() {
-		// Get word
-
+		// Get word from GameObject's store
 	}
 
 	// Called once per frame
@@ -28,7 +26,7 @@ public class TextBlob {
 
 			} else {
 				// Make red
-				this.word.color = new Color(1, 0f, 0);
+				this.word.color = new Color(1f, 0, 0);
 			}
 		}
 	}
@@ -38,7 +36,7 @@ public class TextBlob {
 	void updateTypedWord(string typedString) {
 		this.typedText += typedString;
 
-		if (typedString.Contains(" ")) {
+		if (typedString.Contains(" ")) {// User entered space
 			// notify the game object of stats
 			// such as timeLeft, typedText,
 			// word and the fact that we died.
