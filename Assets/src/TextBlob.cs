@@ -12,22 +12,33 @@ public class TextBlob {
     public bool isActive;  // This determines wether this word is being typed
     
     public List<GameObject> renderedCharacters; 
+	public static List<string> words = new List<string>();
+
     // Represents the  graphical representation of each character in the 
     // text blob 
     
 	public TextBlob() {
-        // Get a word
-		string path = "Assets/resources/words.txt";
 
-		//Read the text from directly from the test.txt file
-		StreamReader reader = new StreamReader(path); 
+		if (words.Count == 0) {
+			// Get a word
+			string path = "Assets/resources/words.txt";
 
-		for (int i=0; i<Random.Range(1, 10000); i++) {
-			this.text = reader.ReadLine();
+			//Read the text from directly from the test.txt file
+			StreamReader reader = new StreamReader (path); 
+
+			for (int j = 0; j < 500; j++) {
+				int randomNumber = Random.Range (1, 10000);
+				for (int i = 0; i < randomNumber; i++) {
+					if (i == randomNumber - 1) {
+						words.Add (reader.ReadLine ());
+					}
+				}
+			}
+			reader.Close ();
 		}
-		Debug.Log (this.text);
-		reader.Close();
 
+		int randomIndex = Random.Range (0, words.Count);
+		this.text = words[randomIndex];
 
         this.typedText = "";
         this.isActive = false;

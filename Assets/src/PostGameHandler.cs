@@ -14,8 +14,6 @@ public class PostGameHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		TextBlob t = new TextBlob ();
-
 		statslabel.text = "Score: " + score.ToString () + "\n Words Typed: " + wordsTyped.ToString()
 			+ "\n Accuracy: ";
 
