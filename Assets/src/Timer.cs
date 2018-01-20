@@ -11,7 +11,6 @@ public class Timer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Update Timer UI
-		timer = gameObject.GetComponent<Text>();
 		timer.text = timeLeft.ToString();
 	}
 
