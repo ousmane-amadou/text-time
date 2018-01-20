@@ -14,6 +14,8 @@ public class PostGameHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		TextBlob t = new TextBlob ();
+
 		statslabel.text = "Score: " + score.ToString () + "\n Words Typed: " + wordsTyped.ToString()
 			+ "\n Accuracy: ";
 
@@ -25,7 +27,6 @@ public class PostGameHandler : MonoBehaviour {
 		}
 
 		playButton.onClick.AddListener (loadGameScene);
-		Debug.Log ("called on" + statslabel);
 	}
 	
 	// Update is called once per frame

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class TextBlob {
 /* Representation Invariants */
@@ -14,8 +15,20 @@ public class TextBlob {
     // Represents the  graphical representation of each character in the 
     // text blob 
     
-	public TextBlob(string text) {
-        this.text = text;
+	public TextBlob() {
+        // Get a word
+		string path = "Assets/resources/words.txt";
+
+		//Read the text from directly from the test.txt file
+		StreamReader reader = new StreamReader(path); 
+
+		for (int i=0; i<Random.Range(1, 10000); i++) {
+			this.text = reader.ReadLine();
+		}
+		Debug.Log (this.text);
+		reader.Close();
+
+
         this.typedText = "";
         this.isActive = false;
 	}
