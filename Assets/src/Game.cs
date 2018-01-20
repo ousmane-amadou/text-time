@@ -13,8 +13,8 @@ public class NewBehaviourScript : MonoBehaviour {
     public int multiplierValue;
     
     public bool isPaused;
-    
-    public List<string> 
+
+    public List<string> gameWords;
     public List<TextBlob> gameBlobs;
 	// Use this for initialization
 	void Start () {
@@ -33,7 +33,8 @@ public class NewBehaviourScript : MonoBehaviour {
              if(playerInput == gameBlobs[i].getText()) {
                 updateScore(gameBlobs[i]);
                 updateStats(gameBlobs[i]);
-                
+
+                updateBlobs(i); // Should Generate a New Blob
                 boostMultipliers();
                 return;
              }
@@ -47,14 +48,21 @@ public class NewBehaviourScript : MonoBehaviour {
 
     // Adds points to current score based on:
     //   * Length of text completed
-    //   * 
+    //   * Whether or not is a special text blob
+    //   * Complexity of Word
+    //   * Combo and Multipliers
     void updateScore(TextBlob finishedTextBlob) {
         score += multiplierValue * finishedTextBlob.getText().Length;
+        score += calculateWordComplexity(finishedTextBlob.getText());
         if(finishedTextBlob.GetType() == SpecialTextBlob) {
             score += finishedTextBlob.bonus; 
         }
-        
     }
+
+    // A word complexity score represents how difficult it is to type a
+    // certain word on a touch screen.
+    void calculateWordComplexity() { };
+    
     void boostMultipliers() {
         if(multiplierValue == 16) {
             return;
