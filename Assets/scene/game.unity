@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1233e6551fe447d9c8f39c6a776911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringToEdit: Hello World
 --- !u!1 &1951907979
 GameObject:
   m_ObjectHideFlags: 0
