@@ -25,7 +25,6 @@ public class PostGameHandler : MonoBehaviour {
 		}
 
 		playButton.onClick.AddListener (loadGameScene);
-		Debug.Log ("called on" + statslabel);
 	}
 	
 	// Update is called once per frame
